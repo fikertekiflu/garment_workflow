@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet, useLocation } from 'react-router-dom'; // Outlet is key for nested routes
-import AdminSidebar from './sidebar';
+import AdminSidebar from './sideBar';
 import WarehouseSidebar from '../warehouseDashboard/Sidebar'; // Make sure this path is correct
 
 // This component determines which sidebar and content to show
