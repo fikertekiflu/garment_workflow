@@ -24,7 +24,12 @@ import AdminReports from './AdminDashboard/AdminReports';
 
 // Import other role dashboards later if needed
 // import ProductionDashboard from './pages/ProductionDashboard';
-
+import WarehouseOverview from './warehouseDashboard/WarehouseOverview';
+import WarehouseInventory from './warehouseDashboard/WarehouseInventory';
+import WarehouseIncoming from './warehouseDashboard/WarehouseIncoming';
+import WarehouseOutgoing from './warehouseDashboard/WarehouseOutgoing';
+import WarehouseTasks from './warehouseDashboard/WarehouseTasks';
+import WarehouseReports from './warehouseDashboard/WarehouseReports';
 // Helper component to conditionally render Navbar/Footer based on the route
 const LayoutWrapper = ({ children }) => {
   const location = useLocation();
@@ -77,7 +82,15 @@ function App() {
              {/* Add more nested admin routes here if needed */}
           </Route>
           {/* --- End Admin Dashboard Routes --- */}
-
+          <Route path="/dashboard/warehouse" element={<DashboardLayout />}>
+             <Route index element={<Navigate to="overview" replace />} />
+             <Route path="overview" element={<WarehouseOverview />} />
+             <Route path="inventory" element={<WarehouseInventory />} />
+             <Route path="incoming" element={<WarehouseIncoming />} />
+             <Route path="outgoing" element={<WarehouseOutgoing />} />
+             <Route path="tasks" element={<WarehouseTasks />} />
+             <Route path="reports" element={<WarehouseReports />} />
+          </Route>
 
           {/* === Add routes for other role dashboards below === */}
           {/* Example for Production Manager: */}
