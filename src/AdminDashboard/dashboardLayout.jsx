@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet, useLocation } from 'react-router-dom'; // Outlet is key for nested routes
 import AdminSidebar from './sideBar';
 import WarehouseSidebar from '../warehouseDashboard/Sidebar'; // Make sure this path is correct
+import CuttingManagerSidebar from '../CuttingManagerDashboard/Sidebar';
 
 // This component determines which sidebar and content to show
 const DashboardLayout = () => {
@@ -15,6 +16,9 @@ const DashboardLayout = () => {
   } else if (location.pathname.startsWith('/dashboard/warehouse')) {
     userRole = 'warehouse';
   }
+ else if (location.pathname.startsWith('/dashboard/cuttingmanager')) {
+  userRole = 'cuttingmanager';
+}
   // Add more 'else if' blocks here for other roles like 'productionmanager', 'merchandiser', etc.
 
   let SidebarComponent;
@@ -22,6 +26,9 @@ const DashboardLayout = () => {
     SidebarComponent = AdminSidebar;
   } else if (userRole === 'warehouse') {
     SidebarComponent = WarehouseSidebar;
+  }
+  else if (userRole === 'cuttingmanager') {
+    SidebarComponent = CuttingManagerSidebar;
   }
   // Add more 'else if' for other roles, assigning their respective sidebars
   else {
