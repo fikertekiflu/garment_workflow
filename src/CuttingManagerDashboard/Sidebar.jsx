@@ -31,7 +31,7 @@ const CuttingManagerSidebar = () => {
     { name: 'Overview', icon: LuLayoutDashboard, path: 'overview' },
     { name: 'Cutting Orders', icon: LuScissors, path: 'orders' }, // From cutting2.jpg
     { name: 'Fabric Allocation', icon: LuRuler, path: 'allocation' }, // From cutting1.jpg (Marker length, fabric usage)
-    { name: 'Material Requisitions', icon: LuWarehouse, path: 'material' }, // From cutting3.jpg & cutting4.jpg
+    { name: 'Material Requisitions', icon: LuWarehouse, path: 'requisitions' }, // From cutting3.jpg & cutting4.jpg
     { name: 'Daily Cutting Log', icon: LuClipboardList, path: 'logs' }, // From cutting1.jpg & cutting2.jpg (Daily activity tracking)
     { name: 'Efficiency & Waste', icon: LuGauge, path: 'efficiency' }, // From cutting1.jpg (Efficiency, difference/waste)
     { name: 'Reports', icon: LuFileText, path: 'reports' }, // Consolidated reports

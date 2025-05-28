@@ -28,12 +28,13 @@ import WarehouseReports from './warehouseDashboard/WarehouseReports';
 
 // Import Cutting Manager Section Components
 import CuttingManagerOverview from './CuttingManagerDashboard/CuttingManagerOverview';
-// import CuttingManagerAllocation from './CuttingManagerDashboard/CuttingManagerAllocation';
-// import CuttingManagerRequisitions from './CuttingManagerDashboard/CuttingManagerRequisitions';
-// import CuttingManagerLogs from './CuttingManagerDashboard/CuttingManagerRequisitions';
-// import CuttingManagerEfficiency from './CuttingManagerDashboard/CuttingManagerEfficiency';
-// import CuttingManagerReports from './CuttingManagerDashboard/CuttingManagerReports';
-// import CuttingManagerOrders from './CuttingManagerDashboard/CuttingManagerOrders';
+import CuttingFabricAllocation from './CuttingManagerDashboard/CuttingFabricAllocation';
+import CuttingMaterialRequisitions from './CuttingManagerDashboard/CuttingMaterialRequisitions';
+import CuttingDailyLog from './CuttingManagerDashboard/CuttingDailyLog';
+import CuttingEfficiencyWaste from './CuttingManagerDashboard/CuttingEfficiencyWaste';
+import CuttingManagerReports from './CuttingManagerDashboard/CuttingManagerReports';
+import CuttingManagerOrders from './CuttingManagerDashboard/CuttingManagerOrders';
+
 
 
 const LayoutWrapper = ({ children }) => {
@@ -87,12 +88,12 @@ function App() {
         <Route path="/dashboard/cuttingmanager" element={<DashboardLayout />}>
           <Route index element={<Navigate to="overview" replace />} />
           <Route path="overview" element={<CuttingManagerOverview />} />
-          {/* <Route path="allocation" element={<CuttingManagerAllocation />} />
-          <Route path="requisitions" element={<CuttingManagerRequisitions />} />
-          <Route path="logs" element={<CuttingManagerLogs />} />
-          <Route path="efficiency" element={<CuttingManagerEfficiency />} />
-          <Route path="reports" element={<CuttingManagerReports />} />
-          <Route path="orders" element={<CuttingManagerOrders />} /> */}
+          <Route path="allocation" element={<CuttingFabricAllocation />} />
+          <Route path="requisitions" element={<CuttingMaterialRequisitions />} />
+          <Route path="logs" element={<CuttingDailyLog />} />
+         <Route path="efficiency" element={<CuttingEfficiencyWaste />} />
+         <Route path="reports" element={<CuttingManagerReports />} />
+          <Route path="orders" element={<CuttingManagerOrders />} /> 
           {/* Add more Cutting Manager routes as needed */}
         </Route>
 
