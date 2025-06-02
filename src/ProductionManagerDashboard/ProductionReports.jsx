@@ -415,12 +415,12 @@ const ProductionReports = () => {
         </motion.div>
 
         {/* Other Potential Report (e.g., Utilization over time, Cost of Quality) */}
-        <motion.div variants={itemVariants} className="bg-gray-800/70 backdrop-blur-sm border border-gray-700/60 rounded-xl shadow-xl p-6">
+        {/* <motion.div variants={itemVariants} className="bg-gray-800/70 backdrop-blur-sm border border-gray-700/60 rounded-xl shadow-xl p-6">
           <h3 className="text-xl font-semibold mb-4 text-gray-200 flex items-center"><FaDollarSign className="mr-2" /> Cost of Quality (Placeholder)</h3>
           <div className="h-80 flex items-center justify-center text-gray-500">
             <p>This space can be used for other critical reports like Cost of Quality, Utilization trends, etc.</p>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </motion.div>
   );

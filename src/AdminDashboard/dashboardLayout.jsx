@@ -4,6 +4,8 @@ import AdminSidebar from './sideBar';
 import WarehouseSidebar from '../warehouseDashboard/Sidebar';
 import CuttingManagerSidebar from '../CuttingManagerDashboard/Sidebar';
 import ProductionManagerSidebar from '../ProductionManagerDashboard/Sidebar';
+import QualityManagerSidebar from '../QualityManagerDashboard/Sidebar';
+import MerchandiserSidebar from '../MerchandiserDashboard/Sidebar';
 
 const DashboardLayout = () => {
   const location = useLocation();
@@ -17,6 +19,10 @@ const DashboardLayout = () => {
     userRole = 'cuttingmanager';
   } else if (location.pathname.startsWith('/dashboard/productionmanager')) {
     userRole = 'productionmanager';
+  } else if (location.pathname.startsWith('/dashboard/qualitymanager')) {
+    userRole = 'qualitymanager';
+  } else if (location.pathname.startsWith('/dashboard/merchandiser')) {
+    userRole = 'merchandiser';
   }
 
   let SidebarComponent;
@@ -28,6 +34,10 @@ const DashboardLayout = () => {
     SidebarComponent = CuttingManagerSidebar;
   } else if (userRole === 'productionmanager') {
     SidebarComponent = ProductionManagerSidebar;
+  } else if (userRole === 'qualitymanager') {
+    SidebarComponent = QualityManagerSidebar;
+  } else if (userRole === 'merchandiser') {
+    SidebarComponent = MerchandiserSidebar;
   } else {
     return <div className="text-white p-10">Error: Appropriate dashboard layout not found for this role or path.</div>;
   }

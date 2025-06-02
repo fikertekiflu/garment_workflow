@@ -343,12 +343,12 @@ const ProductionQualityControl = () => {
         </motion.div>
 
         {/* Quality Trend (e.g., Daily Pass Rate) - Placeholder */}
-        <motion.div variants={itemVariants} className="bg-gray-800/70 backdrop-blur-sm border border-gray-700/60 rounded-xl shadow-xl p-6">
+        {/* <motion.div variants={itemVariants} className="bg-gray-800/70 backdrop-blur-sm border border-gray-700/60 rounded-xl shadow-xl p-6">
           <h3 className="text-xl font-semibold mb-4 text-gray-200 flex items-center"><FaChartLine className="mr-2" /> Pass Rate Trend (Placeholder)</h3>
           <div className="h-72 flex items-center justify-center text-gray-500">
             <p>Chart for Pass Rate Trend over time would go here.</p>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
 
 

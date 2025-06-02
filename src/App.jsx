@@ -12,6 +12,8 @@ import Footer from './components/Footer';
 import LandingPage from './pages/LandingPage';
 import Login from './pages/login';
 
+// Removed: Placeholder Pages for Navbar Links (AboutPage, ServicesPage)
+
 // Import Admin Section Components
 import AdminOverview from './AdminDashboard/AdminOverview';
 import AdminUserManagement from './AdminDashboard/AdminUserManagement';
@@ -39,8 +41,24 @@ import CuttingManagerOrders from './CuttingManagerDashboard/CuttingManagerOrders
 import ProductionManagerOverview from './ProductionManagerDashboard/ProductionManagerOverview';
 import ProductionDailyLog from './ProductionManagerDashboard/ProductionDailyLog';
 import ProductionLineManagement from './ProductionManagerDashboard/ProductionLineManagement';
-import ProductionQualityControl from './ProductionManagerDashboard/ProductionQualityControl'; 
-import ProductionReports from './ProductionManagerDashboard/ProductionReports'; // Assuming you have a reports component
+import ProductionQualityControl from './ProductionManagerDashboard/ProductionQualityControl';
+import ProductionReports from './ProductionManagerDashboard/ProductionReports';
+
+// Import Quality Manager Section Components
+import QualityManagerOverview from './QualityManagerDashboard/QualityManagerOverview';
+import QualityInspectionLog from './QualityManagerDashboard/QualityInspectionLog';
+import QualityDefectAnalysis from './QualityManagerDashboard/QualityDefectAnalysis';
+import QualityStandardsManagement from './QualityManagerDashboard/QualityStandardsManagement';
+import QualityReports from './QualityManagerDashboard/QualityReports';
+
+// Import Merchandiser Section Components
+import MerchandiserOverview from './MerchandiserDashboard/MerchandiserOverview';
+import MerchandiserOrderTracking from './MerchandiserDashboard/MerchandiserOrderTracking';
+import MerchandiserSampleManagement from './MerchandiserDashboard/MerchandiserSampleManagement';
+import MerchandiserMaterialTracking from './MerchandiserDashboard/MerchandiserMaterialTracking';
+import MerchandiserProductionMonitoring from './MerchandiserDashboard/MerchandiserProductionMonitoring';
+import MerchandiserShippingLog from './MerchandiserDashboard/MerchandiserShippingLog';
+import AnalyticsAndReports from './MerchandiserDashboard/AnalyticsAndReports';
 
 const LayoutWrapper = ({ children }) => {
   const location = useLocation();
@@ -68,6 +86,9 @@ function App() {
 
         {/* Login Page Route */}
         <Route path="/login" element={<Login />} />
+
+        {/* Removed: Public Pages from Navbar (AboutPage, ServicesPage routes) */}
+        {/* These routes are no longer needed as Navbar links all go to "/" */}
 
         {/* --- Admin Dashboard Routes --- */}
         <Route path="/dashboard/admin" element={<DashboardLayout />}>
@@ -98,10 +119,10 @@ function App() {
           <Route path="logs" element={<CuttingDailyLog />} />
          <Route path="efficiency" element={<CuttingEfficiencyWaste />} />
          <Route path="reports" element={<CuttingManagerReports />} />
-          <Route path="orders" element={<CuttingManagerOrders />} /> 
+          <Route path="orders" element={<CuttingManagerOrders />} />
           {/* Add more Cutting Manager routes as needed */}
         </Route>
-        {/*-- --- Production Manager Dashboard Routes --- */}
+        {/* --- Production Manager Dashboard Routes --- */}
         <Route path="/dashboard/productionmanager" element={<DashboardLayout />}>
           <Route index element={<Navigate to="overview" replace />} />
           <Route path="overview" element={<ProductionManagerOverview />} />
@@ -111,13 +132,36 @@ function App() {
           <Route path="reports" element={<ProductionReports />} />
           {/* Add more Production Manager routes as needed */}
           </Route>
-          {/* Add more Production Manager routes as needed */}
+        {/* --- Quality Manager Dashboard Routes --- */}
+        <Route path="/dashboard/qualitymanager" element={<DashboardLayout />}>
+          <Route index element={<Navigate to="overview" replace />} />
+          <Route path="overview" element={<QualityManagerOverview />} />
+          <Route path="inspection-log" element={<QualityInspectionLog />} />
+          <Route path="defect-analysis" element={<QualityDefectAnalysis />} />
+          <Route path="standards" element={<QualityStandardsManagement />} />
+          <Route path="reports" element={<QualityReports />} />
+          {/* Add more Quality Manager routes as needed */}
+        </Route>
+        {/* --- Merchandiser Dashboard Routes --- */}
+        <Route path="/dashboard/merchandiser" element={<DashboardLayout />}>
+          <Route index element={<Navigate to="overview" replace />} />
+          <Route path="overview" element={<MerchandiserOverview />} />
+          <Route path="order-tracking" element={<MerchandiserOrderTracking />} />
+          <Route path="sample-management" element={<MerchandiserSampleManagement />} />
+          <Route path="material-tracking" element={<MerchandiserMaterialTracking />} />
+          <Route path="production-monitoring" element={<MerchandiserProductionMonitoring />} />
+          <Route path="shipping-log" element={<MerchandiserShippingLog />} />
+          <Route path="analytics-reports" element={<AnalyticsAndReports />} />
 
-        {/* Optional: Catch-all route for 404 Not Found */}
+
+          {/* Add more Merchandiser routes as needed */}
+        </Route>
+
+        {/* Catch-all route for 404 */}
         <Route
           path="*"
           element={
-            <div className="flex justify-center items-center h-screen text-xl">
+            <div className="flex justify-center items-center h-screen text-xl bg-gray-900 text-white">
               Page Not Found (404)
             </div>
           }
