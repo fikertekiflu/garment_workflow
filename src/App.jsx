@@ -35,7 +35,12 @@ import CuttingEfficiencyWaste from './CuttingManagerDashboard/CuttingEfficiencyW
 import CuttingManagerReports from './CuttingManagerDashboard/CuttingManagerReports';
 import CuttingManagerOrders from './CuttingManagerDashboard/CuttingManagerOrders';
 
-
+// Import Production Manager Section Components
+import ProductionManagerOverview from './ProductionManagerDashboard/ProductionManagerOverview';
+import ProductionDailyLog from './ProductionManagerDashboard/ProductionDailyLog';
+import ProductionLineManagement from './ProductionManagerDashboard/ProductionLineManagement';
+import ProductionQualityControl from './ProductionManagerDashboard/ProductionQualityControl'; 
+import ProductionReports from './ProductionManagerDashboard/ProductionReports'; // Assuming you have a reports component
 
 const LayoutWrapper = ({ children }) => {
   const location = useLocation();
@@ -96,6 +101,17 @@ function App() {
           <Route path="orders" element={<CuttingManagerOrders />} /> 
           {/* Add more Cutting Manager routes as needed */}
         </Route>
+        {/*-- --- Production Manager Dashboard Routes --- */}
+        <Route path="/dashboard/productionmanager" element={<DashboardLayout />}>
+          <Route index element={<Navigate to="overview" replace />} />
+          <Route path="overview" element={<ProductionManagerOverview />} />
+          <Route path="daily-log" element={<ProductionDailyLog />} />
+          <Route path="line-management" element={<ProductionLineManagement />} />
+          <Route path="quality-control" element={<ProductionQualityControl />} />
+          <Route path="reports" element={<ProductionReports />} />
+          {/* Add more Production Manager routes as needed */}
+          </Route>
+          {/* Add more Production Manager routes as needed */}
 
         {/* Optional: Catch-all route for 404 Not Found */}
         <Route
