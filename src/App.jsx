@@ -60,6 +60,13 @@ import MerchandiserProductionMonitoring from './MerchandiserDashboard/Merchandis
 import MerchandiserShippingLog from './MerchandiserDashboard/MerchandiserShippingLog';
 import AnalyticsAndReports from './MerchandiserDashboard/AnalyticsAndReports';
 
+// Import Packaging Section Components
+import PackagingOverview from './PackagingDashboard/PackagingOverview';
+import PackagingTracking from './PackagingDashboard/PackagingTracking';
+import MaterialUsage from './PackagingDashboard/MaterialUsage';
+import PackagingQC from './PackagingDashboard/PackagingQC';
+import PackagingReports from './PackagingDashboard/PackagingReports';
+
 const LayoutWrapper = ({ children }) => {
   const location = useLocation();
   const isDashboard = location.pathname.startsWith('/dashboard');
@@ -152,10 +159,18 @@ function App() {
           <Route path="production-monitoring" element={<MerchandiserProductionMonitoring />} />
           <Route path="shipping-log" element={<MerchandiserShippingLog />} />
           <Route path="analytics-reports" element={<AnalyticsAndReports />} />
-
-
           {/* Add more Merchandiser routes as needed */}
         </Route>
+        {/* --- Packaging Dashboard Routes --- */}
+        <Route path="/dashboard/packaging" element={<DashboardLayout />}>
+          <Route index element={<Navigate to="overview" replace />} />
+          <Route path="overview" element={<PackagingOverview />} />
+          <Route path="tracking" element={<PackagingTracking />} />
+          <Route path="materials" element={<MaterialUsage />} />
+          <Route path="inspections" element={<PackagingQC />} />
+          <Route path="reports" element={<PackagingReports />} />
+          {/* Add more Packaging routes as needed */}
+          </Route>
 
         {/* Catch-all route for 404 */}
         <Route
